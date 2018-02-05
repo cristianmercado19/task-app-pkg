@@ -1,6 +1,6 @@
 {
   "name": "task-app-pkg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TaskApp example for MVC in Angular",
   "main": "index.js",
   "scripts": {
