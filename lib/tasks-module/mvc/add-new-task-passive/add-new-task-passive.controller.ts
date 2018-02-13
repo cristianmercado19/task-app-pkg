@@ -19,6 +19,7 @@ export class AddNewTaskPassiveCotroller {
     }
 
     init(view: AddNewTaskPassiveView) {
+
         this.view = view;
         this.view.setMaxLenghTaskName(this.MAX_LENGTH_TASK_NAME);
     }

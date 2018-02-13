@@ -1,7 +1,7 @@
 module.exports = function(config) {
   config.set({
     basePath: '',
-    frameworks: ["jasmine", "karma-typescript"],
+    frameworks: ['jasmine', 'karma-typescript'],
     plugins: [
       require('karma-typescript'),
       require('karma-jasmine'),
@@ -11,15 +11,17 @@ module.exports = function(config) {
       require('karma-coverage-istanbul-reporter'),
       require('karma-sourcemap-loader')
     ],
+    client: {
+      clearContext: false // leave Jasmine Spec Runner output visible in browser
+    },
     files: [
-      { pattern: "lib/**/*.ts" },
-      { pattern: "tests/**/*.ts" }
+      { pattern: 'lib/**/*.ts' },
+      { pattern: 'tests/**/*.ts' },
     ],
     preprocessors: {
-      "lib/**/*.ts": ["karma-typescript"],
-      "tests/**/*.ts": ["karma-typescript", 'sourcemap']
+      'lib/**/*.ts': ['karma-typescript', 'sourcemap'],
+      'tests/**/*.ts': ['karma-typescript', 'sourcemap']
     },
-
     coverageIstanbulReporter: {
       reports: ['html', 'cobertura', 'json'],
       fixWebpackSourcePaths: true,
@@ -47,7 +49,10 @@ module.exports = function(config) {
     },
 
     karmaTypescriptConfig: {
-      tsconfig: "./tsconfig.json",
+      tsconfig: './tsconfig.json',
+      bundlerOptions: {
+        sourceMap: true,
+      }
     },
     exclude: [
     ],
