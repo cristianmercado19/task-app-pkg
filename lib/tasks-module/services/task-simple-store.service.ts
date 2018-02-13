@@ -11,7 +11,7 @@ export class TaskSimpleStoreService implements TaskStoreService {
 
     getState(): TaskState {
 
-        const copyOfState = Object.assign({}, this.state);
+        const copyOfState = (<any>Object).assign({}, this.state);
 
         return copyOfState;
     }
