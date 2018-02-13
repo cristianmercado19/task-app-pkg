@@ -15,15 +15,10 @@ module.exports = function(config) {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     files: [
-      { pattern: 'lib/**/*.+(js|ts)' },
-      {
-        pattern: 'lib/**/*.js.map',
-        included: false
-      },
+      "lib/**/*.ts"
     ],
     preprocessors: {
-      'lib/**/*.+(js|ts)': ['karma-typescript', 'sourcemap'],
-      'lib/**/*.js': ['sourcemap']
+      '**/*.ts': 'karma-typescript',
     },
     coverageIstanbulReporter: {
       reports: ['html', 'cobertura', 'json'],
@@ -53,9 +48,6 @@ module.exports = function(config) {
 
     karmaTypescriptConfig: {
       tsconfig: './tsconfig.json',
-      bundlerOptions: {
-        sourceMap: true
-      }
     },
     exclude: [
     ],
